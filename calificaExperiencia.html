@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <title>Formulario Adicional</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <script>
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCW_4pOVmvkUx62DHsKayzFnmSQWutMInI",
+            authDomain: "registro-mm2024-8a766.firebaseapp.com",
+            databaseURL: "https://registro-mm2024-8a766-default-rtdb.firebaseio.com",
+            projectId: "registro-mm2024-8a766",
+            storageBucket: "registro-mm2024-8a766.appspot.com",
+            messagingSenderId: "479001506421",
+            appId: "1:479001506421:web:5a1411a27b809b96a53e3c"
+        };
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+    </script>
+    <script src="js/additional_form.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <div class="description">
+            CALIFICA NUESTRA EXPERIENCIA
+        </div>
+        <form id="additionalForm">
+            <div class="question-container">
+                <label>¿Cómo califica tu experiencia usando el juego en parejas?</label>
+                <div class="checkbox-row">
+                    <input type="radio" id="juego-excelente" name="juego" value="excelente" required>
+                    <label for="juego-excelente">Excelente</label>
+                    <input type="radio" id="juego-bueno" name="juego" value="bueno" required>
+                    <label for="juego-bueno">Bueno</label>
+                    <input type="radio" id="juego-aceptable" name="juego" value="aceptable" required>
+                    <label for="juego-aceptable">Aceptable</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="radio" id="juego-regular" name="juego" value="regular" required>
+                    <label for="juego-regular">Regular</label>
+                    <input type="radio" id="juego-malo" name="juego" value="malo" required>
+                    <label for="juego-malo">Malo</label>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <label>¿Cómo califica tu experiencia usando la experiencia en las gafas VR Meta?</label>
+                <div class="checkbox-row">
+                    <input type="radio" id="vr-excelente" name="vr" value="excelente" required>
+                    <label for="vr-excelente">Excelente</label>
+                    <input type="radio" id="vr-bueno" name="vr" value="bueno" required>
+                    <label for="vr-bueno">Bueno</label>
+                    <input type="radio" id="vr-aceptable" name="vr" value="aceptable" required>
+                    <label for="vr-aceptable">Aceptable</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="radio" id="vr-regular" name="vr" value="regular" required>
+                    <label for="vr-regular">Regular</label>
+                    <input type="radio" id="vr-malo" name="vr" value="malo" required>
+                    <label for="vr-malo">Malo</label>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <label>¿Cómo califica tu experiencia usando la cámara MM 24 360°?</label>
+                <div class="checkbox-row">
+                    <input type="radio" id="camara-excelente" name="camara" value="excelente" required>
+                    <label for="camara-excelente">Excelente</label>
+                    <input type="radio" id="camara-bueno" name="camara" value="bueno" required>
+                    <label for="camara-bueno">Bueno</label>
+                    <input type="radio" id="camara-aceptable" name="camara" value="aceptable" required>
+                    <label for="camara-aceptable">Aceptable</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="radio" id="camara-regular" name="camara" value="regular" required>
+                    <label for="camara-regular">Regular</label>
+                    <input type="radio" id="camara-malo" name="camara" value="malo" required>
+                    <label for="camara-malo">Malo</label>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <label>¿Cómo corredor qué experiencia te gustaría vivir en el Stand de Farmacenter?</label>
+                <div class="input-container">
+                    <input type="text" id="experiencia" name="experiencia" required>
+                    <button type="button" onclick="confirmExperience()">Confirmar</button>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <label>¿Cómo corredor qué experiencia te gustaría vivir en el Stand de Farmacenter?</label>
+                <div class="checkbox-column">
+                    <input type="radio" id="bienestar" name="stand" value="bienestar">
+                    <label for="bienestar">Bienestar</label>
+                    <input type="radio" id="cuidado" name="stand" value="cuidado">
+                    <label for="cuidado">Cuidado</label>
+                    <input type="radio" id="familia" name="stand" value="familia">
+                    <label for="familia">Familia</label>
+                    <input type="radio" id="salud" name="stand" value="salud">
+                    <label for="salud">Salud</label>
+                    <input type="radio" id="servicio" name="stand" value="servicio">
+                    <label for="servicio">Servicio</label>
+                </div>
+            </div>
+
+            <input type="submit" value="Guardar">
+        </form>
+        <div class="footer-logos">
+            <img src="images/logo1.png" alt="Logo1">
+            <img src="images/logo2.png" alt="Logo2">
+        </div>
+    </div>
+</body>
+</html>

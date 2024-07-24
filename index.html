@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <title>Registro de Usuario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <script src="js/scripts.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <div class="description">
+            FORMULARIO DE REGISTRO
+        </div>
+        <form id="registrationForm">
+            <div class="input-container">
+                <label for="nombres">Nombre completo</label>
+                <input type="text" id="nombres" name="nombres" required>
+            </div>
+            <div class="input-container">
+                <label for="tipoId">Tipo de identificación</label>
+                <select id="tipoId" name="tipoId" required>
+                    <option value="">Selecciona un tipo de identificación</option>
+                    <option value="TI">Tarjeta de Identidad</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="NIT">NIT</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="CE">Cédula Extranjera</option>
+                    <option value="TE">Tarjeta Extranjera</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <label for="numId">Número de identificación</label>
+                <input type="text" id="numId" name="numId" required>
+            </div>
+            <div class="input-container">
+                <label for="fechaNacimiento">Fecha de nacimiento</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            </div>
+            <div class="input-container">
+                <label for="telefono">Número de celular</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="input-container">
+                <label for="barrio">Lugar de residencia</label>
+                <input type="text" id="barrio" name="barrio" required>
+            </div>
+            <div class="input-container">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="description">
+               INFORMACIÓN DE DATOS PERSONALES
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="aceptar" name="aceptar" required>
+                <label for="aceptar">Para poder participar en nuestra carrera y recibir toda la información necesaria, necesitamos tu consentimiento para recopilar y utilizar tus datos personales. Estos datos serán utilizados únicamente para fines relacionados con el evento y no serán compartidos con terceros sin tu consentimiento.</label>
+            </div>
+            <input type="submit" value="Califica nuestra experiencia">
+        </form>
+        <div class="footer-logos">
+            <img src="images/logo1.png" alt="Logo1">
+            <img src="images/logo2.png" alt="Logo2">
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="dataModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>AUTORIZACIÓN PARA EL TRATAMIENTO DE DATOS PERSONALES PARTICIPACIÓN EN SORTEOS, RIFAS , JUEGOS PROMOCIONALES Y ENTREGA DE PREMIOS</h2>
+            </div>
+            <div class="modal-body">
+                <p>En cumplimiento de la Ley Estatutaria 1581 de 2012 de Protección de Datos y normas concordantes, autorizo como Titular de  la información para que mis datos personales sean incorporados en una base de datos responsabilidad de la COOPERATIVA  NACIONAL DE DROGUISTAS DETALLISTAS-COOPIDROGAS (FARMACENTER) para su tratamiento, el cual incluirá la  recolección, almacenamiento, uso, circulación y destinación final, con la finalidad de realizar gestión administrativa, gestión de  estadísticas internas, prospección comercial, marketing, realización y registro de eventos, entrega de premios, participación en  sorteos, verificación de datos, envío de comunicaciones y contacto a través de los medios registrados, publicidad propia,  transmisión y transferencia de datos con terceros como aliados comerciales e institucionales de la compañía o con terceros con  los cuales entable relaciones para la gestión publicitaria o audiovisual. Así como, autorizo como Titular de la información que  mis imágenes personales (fotografías y videos), sean incorporados en un base de datos responsabilidad de la COOPERATIVA  NACIONAL DE DROGUISTAS DETALLISTAS-COOPIDROGAS (FARMACENTER) para su tratamiento, el cual incluirá la  recolección, almacenamiento, uso, circulación y destinación final, con la finalidad de registrar eventos y entrega de premios, así  como, para realizar publicaciones en medios escritos, medios audiovisuales, redes sociales y páginas web, transmisión y  transferencia de datos con terceros como aliados comerciales e institucionales de la compañía, patrocinadores o con terceros  con los cuales entable relaciones para la gestión publicitaria o audiovisual. Es de carácter facultativo suministrar información que  verse sobre Datos Sensibles (imágenes personales), entendidos como aquellos que afectan la intimidad o generen algún tipo de  discriminación, o sobre menores de edad. Como titular de mis datos puedo ejercitar los derechos de acceso, corrección,  supresión de datos o revocación de la autorización o reclamo por infracción, mediante un escrito dirigido a la COOPERATIVA  NACIONAL DE DROGUISTAS DETALLISTAS-COOPIDROGAS (FARMACENTER) a la dirección de correo  electrónico datospersonales@coopidrogas.com.co, indicando en el asunto el derecho que deseo ejercer, o mediante correo  ordinario remitido a la dirección Autopista Bogotá – Medellín Km. 4.7 vía Siberia-Cota/Cundinamarca. La política de tratamiento  de los datos del Titular, así como los cambios sustanciales que se produzcan en ésta, se podrán consultar en el siguiente link: https://www.coopidrogas.com.co/index.php/en/. AUTORIZACIÓN PARA EL USO DE DERECHOS DE IMÁGEN: Yo  otorgo autorización expresa para el uso de los derechos de imagen que me reconoce la Constitución, la ley y demás normas  concordantes a la COOPERATIVA NACIONAL DE DROGUISTAS DETALLISTAS-COOPIDROGAS (FARMACENTER). La  autorización se regirá por las normas legales aplicables y en particular por las siguientes condiciones: 1. Autorización y objeto.  Autorizo el uso de los derechos de imagen sobre fotografías o procedimientos análogos y/o digitales a la fotografía, o  producciones audiovisuales (videos), así como los derechos patrimoniales de autor (reproducción, comunicación pública,  transformación y distribución), derechos conexos en general y todos aquellos derechos de propiedad intelectual que tengan que ver con el derecho de imagen a la COOPERATIVA NACIONAL DE DROGUISTAS DETALLISTAS-COOPIDROGAS (FARMACENTER) sin que ello conlleve el pago por ningún concepto; 2. Alcance de la autorización. La presente autorización  de uso se otorga para ser utilizada en formato o soporte material en ediciones impresas, y se extiende a la utilización en medio  electrónico, óptico, magnético, en redes (Intranet e Internet), mensajes de datos o similares y en general para cualquier medio o  soporte conocido o por conocer en el futuro. La publicación podrá efectuarse de manera directa o a través de un tercero que se  designe para tal fin; 3. Territorio y exclusividad. Los derechos aquí autorizados se dan sin limitación geográfica o territorial alguna.  De igual forma la autorización de uso aquí establecida no implicará exclusividad, por lo que me reservo el derecho de otorgar  autorizaciones de uso similares en los mismos términos en favor de terceros; 4. Derechos morales. La COOPERATIVA  NACIONAL DE DROGUISTAS DETALLISTAS-COOPIDROGAS (FARMACENTER) dará cumplimiento a la normatividad  vigente sobre los derechos morales de autor, los cuales seguirán radicados en cabeza de sus titulares.</p>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

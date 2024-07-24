@@ -1,0 +1,337 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0c3965;
+    background-image: url('../images/textura.png');
+    background-size: 50px 50px; 
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    color: white;
+    margin: 20px;
+    overflow-y: auto;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    max-width: 300px;
+}
+
+.description {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container label {
+    margin-bottom: 5px;
+}
+
+.input-container input,
+.input-container select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid orange;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+}
+
+.warning {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: yellow;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: darkorange;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.footer-logos img {
+    max-width: 150px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .input-container input,
+    .input-container select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .checkbox-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .checkbox-container label {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Sitúa el modal por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilita el scroll si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo negro */
+    background-color: rgba(0,0,0,0.4); /* Con opacidad */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% de margen superior e inferior, centrado horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 500px;
+    color: black;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header .close {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.modal-body {
+    margin: 20px 0;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-footer button {
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-footer button:hover {
+    background-color: darkorange;
+}
+.question-container {
+    margin-bottom: 20px;
+}
+
+.checkbox-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.checkbox-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-column input[type="checkbox"] {
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input-container input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid orange;
+    background-color: white;
+    color: black;
+}
+
+.input-container button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-container button:hover {
+    background-color: darkorange;
+}
+.question-container {
+    margin-bottom: 20px;
+}
+
+.checkbox-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.checkbox-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-column input[type="checkbox"] {
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input-container input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid orange;
+    background-color: white;
+    color: black;
+}
+
+.input-container button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-container button:hover {
+    background-color: darkorange;
+}
+
+.description h1 {
+    color: white; /* Asegura que el texto sea visible sobre el fondo oscuro */
+    text-align: center; /* Centra el texto */
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+button {
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 20px auto; /* Centrado y con margen */
+    display: block; /* Hace que el botón sea un bloque para centrarlo fácilmente */
+    font-size: 18px; /* Tamaño de fuente más grande para mejor lectura */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darkorange;
+}
+
+.footer-logos.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea los logos en el centro */
+    margin-top: 20px;
+}
+
+.footer-logos.column img {
+    max-width: 150px;
+    margin-bottom: 10px; /* Espaciado entre logos */
+}
+
