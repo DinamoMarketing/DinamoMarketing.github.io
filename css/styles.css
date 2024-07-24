@@ -50,9 +50,11 @@ form {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
+
 }
 
 .input-container label {
+    align-self: flex-start;
     margin-bottom: 5px;
 }
 
