@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es">
+
 <head>
     <title>Formulario Adicional</title>
     <meta charset="UTF-8">
@@ -25,6 +26,7 @@
     </script>
     <script src="js/additional_form.js" defer></script>
 </head>
+
 <body>
     <div class="container">
         <div class="logo">
@@ -95,23 +97,31 @@
                     <button type="button" onclick="confirmExperience()">Confirmar</button>
                 </div>
             </div>
-
             <div class="question-container">
-                <label>¿Cómo corredor qué experiencia te gustaría vivir en el Stand de Farmacenter?</label>
+                <label>Seleccione tres palabras con las que describiría a Farmacenter</label>
                 <div class="checkbox-column">
-                    <input type="radio" id="bienestar" name="stand" value="bienestar">
-                    <label for="bienestar">Bienestar</label>
-                    <input type="radio" id="cuidado" name="stand" value="cuidado">
-                    <label for="cuidado">Cuidado</label>
-                    <input type="radio" id="familia" name="stand" value="familia">
-                    <label for="familia">Familia</label>
-                    <input type="radio" id="salud" name="stand" value="salud">
-                    <label for="salud">Salud</label>
-                    <input type="radio" id="servicio" name="stand" value="servicio">
-                    <label for="servicio">Servicio</label>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="bienestar" name="stand" value="bienestar">
+                        <label for="bienestar">Bienestar</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="cuidado" name="stand" value="cuidado">
+                        <label for="cuidado">Cuidado</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="familia" name="stand" value="familia">
+                        <label for="familia">Familia</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="salud" name="stand" value="salud">
+                        <label for="salud">Salud</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="servicio" name="stand" value="servicio">
+                        <label for="servicio">Servicio</label>
+                    </div>
                 </div>
             </div>
-
             <input type="submit" value="Guardar">
         </form>
         <div class="footer-logos">
@@ -120,4 +130,5 @@
         </div>
     </div>
 </body>
+
 </html>
