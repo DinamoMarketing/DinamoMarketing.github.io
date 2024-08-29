@@ -1,17 +1,16 @@
-// Funciones para manejar el modal
-function openModal() {
-    document.getElementById('dataModal').style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('dataModal').style.display = 'none';
-    // No marcar automáticamente el checkbox al cerrar el modal
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('registrationForm');
     const submitButton = form.querySelector('input[type="submit"]');
     const checkbox = document.getElementById('aceptar');
+
+    // Funciones para manejar el modal
+    function openModal() {
+        document.getElementById('dataModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('dataModal').style.display = 'none';
+    }
 
     // Evento para manejar clic en el checkbox de aceptar
     checkbox.addEventListener('click', function(event) {
@@ -37,6 +36,20 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); // Prevenir el envío por defecto
 
         if (checkbox.checked) {
+            // Obtener la fecha y hora actuales en el formato solicitado en la zona horaria de Colombia
+            const currentDate = new Date();
+            const options = {
+                timeZone: 'America/Bogota',
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            };
+            const formattedDate = currentDate.toLocaleString('en-GB', options)
+                .replace(',', '').replace('AM', 'a.m.').replace('PM', 'p.m.');
+
             // Almacenar datos en localStorage y redirigir
             const userData = {
                 nombres: document.getElementById('nombres').value,
@@ -46,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 telefono: document.getElementById('telefono').value,
                 barrio: document.getElementById('barrio').value,
                 email: document.getElementById('email').value,
-                aceptar: checkbox.checked
+                aceptar: checkbox.checked,
+                fechaRegistro: formattedDate // Agregar la fecha y hora de registro en el formato deseado
             };
             localStorage.setItem('userData', JSON.stringify(userData));
             window.location.href = 'calificaExperiencia.html';
